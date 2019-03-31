@@ -1,0 +1,14 @@
+<resources>
+    <declare-styleable name="CodeView">
+        <attr name="inner_padding_horizontal" format="dimension" />
+        <attr name="inner_padding_vertical" format="dimension" />
+        <attr name="element_padding_vertical" format="dimension" />
+        <attr name="element_padding_horizontal" format="dimension" />
+        <attr name="empty_field_width" format="dimension" />
+        <attr name="empty_field_height" format="dimension" />
+        <attr name="empty_line_width" format="dimension" />
+        <attr name="end_line_width" format="dimension" />
+
+        <attr name="text_size" format="dimension" />
+    </declare-styleable>
+</resources>

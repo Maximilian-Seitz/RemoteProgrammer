@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_undo"
+        android:icon="@android:drawable/ic_media_previous"
+        android:title="@string/btn_desc_undo"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_redo"
+        android:icon="@android:drawable/ic_media_next"
+        android:title="@string/btn_desc_redo"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_save"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="@string/btn_desc_save"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_rename"
+        android:title="@string/btn_desc_rename"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_copy"
+        android:title="@string/btn_desc_copy"
+        app:showAsAction="never" />
+
+</menu>

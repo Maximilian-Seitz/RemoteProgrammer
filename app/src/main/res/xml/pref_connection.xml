@@ -1,0 +1,21 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.rcprogrammer.remoteprogrammer.settings.URLPreference
+        android:defaultValue="http://192.168.0.1:5000"
+        android:inputType="textUri"
+        android:key="rc_device_address"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_rc_device_address" />
+
+    <EditTextPreference
+        android:defaultValue="3000"
+        android:inputType="number"
+        android:key="connection_timeout"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_connection_timeout" />
+
+</PreferenceScreen>

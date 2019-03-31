@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_category_code_language">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="override_code_language"
+            android:title="@string/pref_title_override_code_language" />
+        <ListPreference
+            android:defaultValue="0"
+            android:dependency="override_code_language"
+            android:key="code_language"
+            android:title="@string/pref_title_code_language" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,18 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <header
+        android:fragment="com.rcprogrammer.remoteprogrammer.settings.SettingsActivity$ConnectionPreferenceFragment"
+        android:icon="@drawable/ic_sync_black_24dp"
+        android:title="@string/pref_header_connection" />
+
+    <header
+        android:fragment="com.rcprogrammer.remoteprogrammer.settings.SettingsActivity$CodePreferenceFragment"
+        android:icon="@drawable/ic_menu_send"
+        android:title="@string/pref_header_code" />
+
+    <header
+        android:fragment="com.rcprogrammer.remoteprogrammer.settings.SettingsActivity$LanguagePreferenceFragment"
+        android:icon="@drawable/ic_menu_share"
+        android:title="@string/pref_header_lang" />
+
+</preference-headers>

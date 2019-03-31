@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Programmier-Fernsteuerung</string>
+
+    <string name="menu_about">About</string>
+    <string name="menu_functions">Funktionen</string>
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_settings">Einstellungen</string>
+
+
+    <string name="dialog_title_function_name">Funktionsname</string>
+    <string name="dialog_title_add_code_block">Code hinzufügen</string>
+    <string name="dialog_title_save_changes_alert">Änderungen speichern?</string>
+    <string name="dialog_title_rename">Neuer name</string>
+
+
+    <string name="err_test_text">Diese nachricht sollte nicht existieren!</string>
+
+    <string name="err_speech_recognition_not_supported">Fehler: Sprachsteuerung nicht unterstützt!</string>
+    <string name="err_not_connected_to_rc_device">Fehler: Nicht mit Gerät verbunden</string>
+
+    <string name="err_failed_to_save">Fehler: Speichern fehlgeschlagen!</string>
+
+
+    <string name="btn_OK">OK</string>
+    <string name="btn_Cancel">Abbrechen</string>
+    <string name="btn_Yes">Ja</string>
+    <string name="btn_No">Nein</string>
+
+    <string name="btn_desc_connect">Verbinden</string>
+    <string name="btn_desc_rc_device_data">Gerätdaten</string>
+    <string name="btn_desc_info">Info</string>
+    <string name="btn_desc_voice_command">Sprachbefehl</string>
+
+    <string name="btn_desc_rename">Umbenennen</string>
+    <string name="btn_desc_copy">Kopieren</string>
+    <string name="btn_desc_undo">Rückgängig</string>
+    <string name="btn_desc_redo">Wiederhohlen</string>
+    <string name="btn_desc_save">Speichern</string>
+
+
+    <string name="txt_function_info_default_title">Titel</string>
+    <string name="txt_function_info_description">Beschreibung</string>
+    <string name="txt_function_info_parameters">Parameter</string>
+    <string name="txt_function_info_parameter_type">Typ</string>
+    <string name="txt_function_info_parameter_description">Beschreibung</string>
+    <string name="txt_function_info_return_value">Rückgabewert</string>
+    <string name="txt_function_info_notes">Notizen</string>
+
+
+    <string name="prompt_say_command">Sag etwas!</string>
+    <string name="msg_successfully_connected_to_rc_device">Verbindung hergestellt!</string>
+    <string name="btn_speech_cmd">Sag befehl</string>
+
+
+    <string name="msg_save_successful">Datei gespeichert!</string>
+
+
+    <string name="open">Öffnen</string>
+    <string name="close">Schließen</string>
+
+
+    <!-- Strings related to Settings -->
+
+    <!-- Connection settings -->
+    <string name="pref_header_connection">Verbindung</string>
+
+    <string name="pref_title_rc_device_address">Gerät Adresse</string>
+    <string name="pref_title_connection_timeout">Verbindungs Time-out (in ms)</string>
+
+
+    <!-- Code settings -->
+    <string name="pref_header_code">Code</string>
+
+    <string name="pref_category_appearance">Ansicht</string>
+    <string name="pref_title_display_size_percentage">Anzeigegröße</string>
+    <string name="pref_title_hide_add_code_button">\'Code hinzufügen\' Taste verstecken</string>
+
+
+    <!-- Language settings -->
+    <string name="pref_header_lang">Sprache</string>
+
+    <string name="pref_category_code_language">Code</string>
+    <string name="pref_title_override_code_language">Code Sprache überschreiben</string>
+    <string name="pref_title_code_language">Code Sprache</string>
+
+    <string name="pref_category_command_language">Spracherkennung</string>
+    <string name="pref_title_command_language">Spracherkennungs Sprache</string>
+
+
+</resources>
