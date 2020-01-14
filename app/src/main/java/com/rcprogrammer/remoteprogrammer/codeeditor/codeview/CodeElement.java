@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CodeElement  implements CodeContainer{
+public class CodeElement implements CodeContainer{
     private CodeFormat format;
 
     private CodeContainer parent;
@@ -382,7 +382,7 @@ public class CodeElement  implements CodeContainer{
                         if(childElement != null){
                             params.put(paramNum, childElement.toJSONObject());
                         } else {
-                            if(format.takesTypeAtPosition(lineNum, columnNum) != CodeFormat.ValueType.NONE){
+                            if(format.acceptedTypeAtPosition(lineNum, columnNum) != CodeFormat.ValueType.NONE){
                                 String childValue = childValues.get(lineNum).get(columnNum);
                                 if(childValue != null && !childValue.equals("")){
                                     params.put(paramNum, childValue);
@@ -620,7 +620,7 @@ public class CodeElement  implements CodeContainer{
                             CodeElement childElement = childElements.get(lineNum).get(i);
 
                             if(childElement == null){
-                                if(format.takesParameterAt(element.format, lineNum, i)){
+                                if(format.acceptsParameterAt(element.format, lineNum, i)){
                                     childElements.get(lineNum).put(i, element);
                                     element.parent = this;
                                     recalculateSize();
@@ -696,7 +696,7 @@ public class CodeElement  implements CodeContainer{
                             float elementEndY = codeLineHeights[lineNum]/2 + getCodeLineElementHeight(lineNum, i)/2;
 
                             if(y >= elementStartY && y <= elementEndY){
-                                return format.takesTypeAtPosition(lineNum, i);
+                                return format.acceptedTypeAtPosition(lineNum, i);
                             } else {
                                 return CodeFormat.ValueType.NONE;
                             }
