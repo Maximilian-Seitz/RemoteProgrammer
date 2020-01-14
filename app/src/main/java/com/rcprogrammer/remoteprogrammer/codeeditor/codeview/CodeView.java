@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.text.InputType;
 import android.text.TextPaint;
 import android.util.AttributeSet;
@@ -134,7 +135,7 @@ public class CodeView extends View implements CodeContainer {
         }
 
 
-        CodeElement.drawCodeBlock(canvas, code, paddingTop + layout.elementPaddingVertical - scroller.getCurrY(), paddingLeft + layout.elementPaddingHorizontal - scroller.getCurrX(), layout.elementPaddingVertical);
+        CodeElement.drawCodeBlock$app_debug(canvas, code, paddingTop + layout.elementPaddingVertical - scroller.getCurrY(), paddingLeft + layout.elementPaddingHorizontal - scroller.getCurrX(), layout.elementPaddingVertical);
 
         if(draggedElement != null){
             draggedElement.draw(canvas, touchY + touchSize, touchX + touchSize);
@@ -254,7 +255,7 @@ public class CodeView extends View implements CodeContainer {
             } else {
                 scroller.computeScrollOffset();
 
-                CodeElement.addElementToCodeBlockPosition(draggedElement, code, layout, this, event.getX() + scroller.getCurrX() - paddingLeft - layout.getInnerPaddingHorizontal(), event.getY() + scroller.getCurrY() - paddingTop - layout.getInnerPaddingVertical());
+                CodeElement.addElementToCodeBlockPosition$app_debug(draggedElement, code, layout, this, event.getX() + scroller.getCurrX() - paddingLeft - layout.getInnerPaddingHorizontal(), event.getY() + scroller.getCurrY() - paddingTop - layout.getInnerPaddingVertical());
 
                 draggedElement = null;
             }
@@ -278,8 +279,8 @@ public class CodeView extends View implements CodeContainer {
         float oldHeight = codeHeight;
 
 
-        this.codeWidth = CodeElement.calculateCodeBlockWidth(code) + paddingLeft + 2*layout.elementPaddingHorizontal + paddingRight;
-        this.codeHeight = CodeElement.calculateCodeBlockHeight(code, layout) + paddingTop + 2*layout.elementPaddingVertical + paddingBottom;
+        this.codeWidth = CodeElement.calculateCodeBlockWidth$app_debug(code) + paddingLeft + 2*layout.elementPaddingHorizontal + paddingRight;
+        this.codeHeight = CodeElement.calculateCodeBlockHeight$app_debug(code, layout) + paddingTop + 2*layout.elementPaddingVertical + paddingBottom;
 
 
         //This being called means the children have somehow changed, so the CodeView will have to be redrawn.
@@ -288,11 +289,7 @@ public class CodeView extends View implements CodeContainer {
         triggerChangeEvent();
 
         //Check if the codeWidth or codeHeight changed
-        if(Float.compare(oldWidth, codeWidth) != 0 || Float.compare(oldHeight, codeHeight) != 0){
-            return true;
-        } else {
-            return false;
-        }
+        return Float.compare(oldWidth, codeWidth) != 0 || Float.compare(oldHeight, codeHeight) != 0;
     }
 
     private void triggerChangeEvent(){
@@ -344,7 +341,7 @@ public class CodeView extends View implements CodeContainer {
             } else {
                 scroller.computeScrollOffset();
 
-                draggedElement = CodeElement.removeElementFromCodeBlockPosition(code, layout, CodeView.this, e.getX()+scroller.getCurrX()-paddingLeft-layout.elementPaddingHorizontal, e.getY()+scroller.getCurrY()-paddingTop-layout.elementPaddingVertical);
+                draggedElement = CodeElement.removeElementFromCodeBlockPosition$app_debug(code, layout, CodeView.this, e.getX()+scroller.getCurrX()-paddingLeft-layout.elementPaddingHorizontal, e.getY()+scroller.getCurrY()-paddingTop-layout.elementPaddingVertical);
             }
 
             if(draggedElement != null){
@@ -392,8 +389,8 @@ public class CodeView extends View implements CodeContainer {
             final float touchLocalX = touchPosX + scroller.getCurrX()-paddingLeft-layout.elementPaddingHorizontal;
             final float touchLocalY = touchPosY + scroller.getCurrY()-paddingTop-layout.elementPaddingVertical;
 
-            CodeFormat.ValueType inputType = CodeElement.getInputTypeAtCodeBlockPosition(code, layout, touchLocalX, touchLocalY);
-            String value = CodeElement.getInputValueAtCodeBlockPosition(code, layout, touchLocalX, touchLocalY);
+            CodeFormat.ValueType inputType = CodeElement.getInputTypeAtCodeBlockPosition$app_debug(code, layout, touchLocalX, touchLocalY);
+            String value = CodeElement.getInputValueAtCodeBlockPosition$app_debug(code, layout, touchLocalX, touchLocalY);
 
             if(inputType == CodeFormat.ValueType.NONE || inputType == CodeFormat.ValueType.BOOL){
                 return;
@@ -421,7 +418,7 @@ public class CodeView extends View implements CodeContainer {
             builder.setPositiveButton(R.string.btn_OK, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    CodeElement.setInputValueAtCodeBlockPosition(code, layout, input.getText().toString(), touchLocalX, touchLocalY);
+                    CodeElement.setInputValueAtCodeBlockPosition$app_debug(code, layout, input.getText().toString(), touchLocalX, touchLocalY);
                 }
             });
 
@@ -601,13 +598,13 @@ public class CodeView extends View implements CodeContainer {
     private class DragAndDropLocation {
         Drawable icon;
 
-        float fractionX = 0.f;
-        float fractionY = 0.f;
-        float adderX = 0.f;
-        float adderY = 0.f;
+        float fractionX;
+        float fractionY;
+        float adderX;
+        float adderY;
 
-        float sizeX = 0;
-        float sizeY = 0;
+        float sizeX;
+        float sizeY;
 
         DragAndDropLocation(Drawable icon, float fractionX, float fractionY, float adderX, float adderY, float sizeX, float sizeY){
             this.icon = icon;
@@ -621,7 +618,7 @@ public class CodeView extends View implements CodeContainer {
             this.sizeY = sizeY;
         }
 
-        void draw(Canvas canvas){
+        void draw(@NonNull Canvas canvas){
             icon.setBounds((int) (canvas.getWidth()*fractionX + adderX - sizeX/2), (int) (canvas.getHeight()*fractionY + adderY - sizeY/2), (int) (canvas.getWidth()*fractionX + adderX + sizeX/2), (int) (canvas.getHeight()*fractionY + adderY + sizeY/2));
             icon.draw(canvas);
         }
@@ -659,12 +656,12 @@ public class CodeView extends View implements CodeContainer {
         code = new ArrayList<>();
 
         sendChangeEvent = false;
-        CodeElement.addCodeElementsToCodeBlockFromJSON(codeState, code, this, layout);
+        CodeElement.addCodeElementsToCodeBlockFromJSON$app_debug(codeState, code, this, layout);
         sendChangeEvent = true;
     }
 
     public JSONArray getCodeState() throws JSONException{
-        return CodeElement.getJSONArrayFromCodeBlock(code);
+        return CodeElement.getJSONArrayFromCodeBlock$app_debug(code);
     }
 
 

@@ -7,6 +7,10 @@ internal operator fun JSONObject.set(name: String, value: Any?) {
     this.put(name, value)
 }
 
+internal operator fun JSONArray.set(index: Int, value: Any?) {
+    this.put(index, value)
+}
+
 internal operator fun JSONArray.plusAssign(value: Any?) {
     this.put(value)
 }
