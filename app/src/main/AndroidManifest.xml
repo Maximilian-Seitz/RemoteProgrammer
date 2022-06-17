@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rcprogrammer.remoteprogrammer">
+    package="com.rcprogrammer.remoteprogrammer" >
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,37 +11,44 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+
         <activity
-            android:name="com.rcprogrammer.remoteprogrammer.MainActivity"
-            android:label="@string/app_name"
+            android:name=".MainActivity"
+            android:exported="true"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.rcprogrammer.remoteprogrammer.functionlist.FunctionListActivity"
+            android:name=".functionlist.FunctionListActivity"
             android:label="@string/menu_functions"
             android:theme="@style/AppTheme" />
+
         <activity
-            android:name="com.rcprogrammer.remoteprogrammer.codeeditor.EditorActivity"
+            android:name=".codeeditor.EditorActivity"
             android:label=""
             android:theme="@style/AppTheme" />
+
         <activity
-            android:name="com.rcprogrammer.remoteprogrammer.codeeditor.InfoActivity"
+            android:name=".codeeditor.InfoActivity"
             android:theme="@style/AppTheme" />
+
         <activity
-            android:name="com.rcprogrammer.remoteprogrammer.HelpActivity"
+            android:name=".HelpActivity"
             android:label="@string/menu_help"
             android:theme="@style/AppTheme" />
+
         <activity
-            android:name="com.rcprogrammer.remoteprogrammer.settings.SettingsActivity"
+            android:name=".settings.SettingsActivity"
             android:label="@string/menu_settings"
             android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>

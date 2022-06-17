@@ -3,12 +3,8 @@ package com.rcprogrammer.remoteprogrammer.codeeditor;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.util.SparseArray;
 import android.view.Gravity;
@@ -19,9 +15,14 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.rcprogrammer.remoteprogrammer.R;
 import com.rcprogrammer.remoteprogrammer.codeeditor.codeview.CodeFormat;
 import com.rcprogrammer.remoteprogrammer.codeeditor.codeview.CodeView;
-import com.rcprogrammer.remoteprogrammer.R;
 
 import org.json.JSONArray;
 

@@ -1,8 +1,9 @@
 package com.rcprogrammer.remoteprogrammer.codeeditor.codeview;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v4.util.ArrayMap;
+
+import androidx.annotation.Nullable;
+import androidx.collection.ArrayMap;
 
 import org.json.JSONArray;
 import org.json.JSONException;

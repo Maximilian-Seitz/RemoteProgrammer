@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="Theme.RemoteProgrammer.NoActionBar" parent="ThemeOverlay.AppCompat" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.RemoteProgrammer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.RemoteProgrammer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

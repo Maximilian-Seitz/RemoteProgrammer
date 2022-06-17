@@ -1,7 +1,6 @@
 package com.rcprogrammer.remoteprogrammer.codeeditor;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Gravity;
@@ -9,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.rcprogrammer.remoteprogrammer.R;
 import com.rcprogrammer.remoteprogrammer.codeeditor.codeview.CodeFormat;
